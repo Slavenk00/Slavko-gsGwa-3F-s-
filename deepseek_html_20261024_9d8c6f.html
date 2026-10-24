@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slavko gsGwa %3F s%'/ — Царская страница</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cormorant+Unicase:wght@400;500;700&family=Marcellus&family=Cinzel:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+        --burgundy: #3d0e12;
+        --burgundy-2: #5c161b;
+        --gold: #c9a227;
+        --gold-2: #e6c869;
+        --gold-3: #a8821a;
+        --cream: #f5e6c8;
+        --parchment: #ede0c4;
+        --dark: #1a0507;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        background: var(--burgundy);
+        color: var(--cream);
+        line-height: 1.7;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Дамский фон — бархат */
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background:
+            radial-gradient(circle at 20% 20%, rgba(201, 162, 39, 0.08), transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(201, 162, 39, 0.06), transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(92, 22, 27, 0.9), var(--burgundy) 70%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Тонкая текстура */
+    body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image:
+            repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(201, 162, 39, 0.015) 2px, rgba(201, 162, 39, 0.015) 4px);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ========== ГЕРБОВЫЙ ЩИТ ========== */
+    .crest {
+        text-align: center;
+        padding: 30px 0 20px;
+        position: relative;
+    }
+
+    .crest-ornament {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .crest-ornament .line {
+        height: 1px;
+        width: 80px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .crest-ornament .star {
+        color: var(--gold);
+        font-size: 1.4rem;
+        text-shadow: 0 0 12px rgba(201, 162, 39, 0.6);
+    }
+
+    .crown {
+        display: inline-block;
+        width: 80px;
+        height: 60px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.5));
+    }
+
+    .crest h1 {
+        font-family: 'Cinzel', serif;
+        font-weight: 900;
+        font-size: clamp(2rem, 5.5vw, 3.6rem);
+        line-height: 1.1;
+        letter-spacing: 2px;
+        background: linear-gradient(180deg, var(--gold-2) 0%, var(--gold) 50%, var(--gold-3) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    }
+
+    .crest-subtitle {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        color: var(--gold-2);
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+
+    .crest-motto {
+        font-family: 'Marcellus', serif;
+        font-size: 0.78rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: rgba(201, 162, 39, 0.7);
+    }
+
+    /* ========== ОРНАМЕНТАЛЬНЫЙ РАЗДЕЛИТЕЛЬ ========== */
+    .ornament-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0 32px;
+        color: var(--gold);
+    }
+
+    .ornament-divider .orn-line {
+        flex: 1;
+        max-width: 140px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .ornament-divider svg {
+        width: 40px;
+        height: 20px;
+    }
+
+    /* ========== ГЕРОЙ-ФОТО ========== */
+    .hero-image {
+        position: relative;
+        margin-bottom: 20px;
+        border: 2px solid var(--gold);
+        box-shadow:
+            0 0 0 6px var(--burgundy),
+            0 0 0 8px var(--gold-3),
+            0 20px 60px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        aspect-ratio: 16 / 7;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(0.35) saturate(0.85) contrast(1.05) brightness(0.75);
+        transition: transform 0.8s;
+    }
+
+    .hero-image:hover img {
+        transform: scale(1.05);
+    }
+
+    .hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 40%, rgba(61, 14, 18, 0.95) 100%);
+    }
+
+    .hero-image-overlay {
+        position: absolute;
+        bottom: 24px;
+        left: 28px;
+        right: 28px;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .hero-image-overlay .overline {
+        font-family: 'Marcellus', serif;
+        font-size: 0.72rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: var(--gold-2);
+        margin-bottom: 6px;
+    }
+
+    .hero-image-overlay h2 {
+        font-family: 'Cormorant Unicase', serif;
+        font-weight: 700;
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        color: var(--cream);
+        letter-spacing: 1px;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+    }
+
+    /* ========== УГЛОВЫЕ УКРАШЕНИЯ ========== */
+    .corner-frame {
+        position: relative;
+        padding: 40px 32px;
+        background: linear-gradient(135deg, rgba(92, 22, 27, 0.6), rgba(61, 14, 18, 0.8));
+        border: 1px solid rgba(201, 162, 39, 0.35);
+        margin-bottom: 32px;
+    }
+
+    .corner-frame::before,
+    .corner-frame::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-color: var(--gold);
+        border-style: solid;
+    }
+
+    .corner-frame::before {
+        top: 8px;
+        left: 8px;
+        border-width: 2px 0 0 2px;
+    }
+
+    .corner-frame::after {
+        bottom: 8px;
+        right: 8px;
+        border-width: 0 2px 2px 0;
+    }
+
+    .corner-frame .corner-tr,
+    .corner-frame .corner-bl {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-color: var(--gold);
+        border-style: solid;
+    }
+
+    .corner-frame .corner-tr {
+        top: 8px;
+        right: 8px;
+        border-width: 2px 2px 0 0;
+    }
+
+    .corner-frame .corner-bl {
+        bottom: 8px;
+        left: 8px;
+        border-width: 0 0 2px 2px;
+    }
+
+    /* ========== ЗАГОЛОВОК СЕКЦИИ ========== */
+    .section-title {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .section-title .roman {
+        font-family: 'Cinzel', serif;
+        font-size: 1rem;
+        color: var(--gold);
+        letter-spacing: 8px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    .section-title h2 {
+        font-family: 'Cormorant Unicase', serif;
+        font-weight: 700;
+        font-size: clamp(1.6rem, 4vw, 2.3rem);
+        letter-spacing: 2px;
+        color: var(--cream);
+        text-transform: uppercase;
+    }
+
+    .section-title h2 span {
+        color: var(--gold-2);
+    }
+
+    .section-title .subline {
+        display: inline-block;
+        margin-top: 8px;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: rgba(230, 200, 105, 0.65);
+        letter-spacing: 1px;
+    }
+
+    /* ========== ПРОФИЛЬ — КАРТОЧКИ-ГЕРБЫ ========== */
+    .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .profile-card {
+        background: linear-gradient(160deg, var(--burgundy-2), var(--dark));
+        border: 1px solid var(--gold-3);
+        padding: 22px 20px;
+        text-align: center;
+        position: relative;
+        transition: all 0.35s;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-card::before {
+        content: '';
+        position: absolute;
+        inset: 5px;
+        border: 1px solid rgba(201, 162, 39, 0.25);
+        pointer-events: none;
+    }
+
+    .profile-card:hover {
+        border-color: var(--gold);
+        box-shadow:
+            inset 0 0 30px rgba(201, 162, 39, 0.15),
+            0 8px 30px rgba(0, 0, 0, 0.5);
+        transform: translateY(-3px);
+    }
+
+    .profile-card .icon {
+        font-size: 1.5rem;
+        color: var(--gold);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .profile-card .label {
+        font-family: 'Marcellus', serif;
+        font-size: 0.65rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: rgba(201, 162, 39, 0.75);
+        margin-bottom: 10px;
+    }
+
+    .profile-card .value {
+        font-family: 'Cormorant Unicase', serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+        color: var(--cream);
+        line-height: 1.25;
+    }
+
+    .profile-card:nth-child(6) {
+        grid-column: span 3;
+        background: linear-gradient(160deg, #4a1016, #2a0609);
+    }
+
+    .profile-card:nth-child(6) .value {
+        font-size: 1.3rem;
+    }
+
+    /* ========== БИОГРАФИЯ ========== */
+    .bio-intro {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        line-height: 1.75;
+        color: var(--gold-2);
+        text-align: center;
+        padding: 0 20px 32px;
+        position: relative;
+    }
+
+    .bio-intro::before,
+    .bio-intro::after {
+        content: '❦';
+        color: var(--gold);
+        font-size: 1.4rem;
+        display: block;
+        margin: 12px auto;
+        opacity: 0.7;
+    }
+
+    .bio-intro::before { margin-bottom: 20px; }
+    .bio-intro::after { margin-top: 20px; }
+
+    /* Двухколоночная биография с флоат-картинками */
+    .bio-body {
+        column-count: 2;
+        column-gap: 40px;
+        column-rule: 1px solid rgba(201, 162, 39, 0.2);
+        font-size: 1rem;
+        color: #e8dcc2;
+        text-align: justify;
+        line-height: 1.75;
+    }
+
+    .bio-body p {
+        margin-bottom: 16px;
+        break-inside: avoid;
+    }
+
+    .chapter {
+        break-inside: avoid;
+        margin-bottom: 24px;
+    }
+
+    .chapter-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .chapter-year {
+        font-family: 'Marcellus', serif;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        color: var(--gold);
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--gold-3);
+        padding-bottom: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter h3 {
+        font-family: 'Cormorant Unicase', serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: var(--gold-2);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .chapter p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #ddcfb3;
+    }
+
+    /* Картинка в биографии */
+    .bio-image {
+        break-inside: avoid;
+        margin-bottom: 20px;
+        border: 1px solid var(--gold-3);
+        padding: 6px;
+        background: var(--burgundy-2);
+    }
+
+    .bio-image img {
+        width: 100%;
+        display: block;
+        filter: sepia(0.25) saturate(0.9) brightness(0.8);
+    }
+
+    .bio-image .caption {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 0.82rem;
+        color: rgba(201, 162, 39, 0.8);
+        text-align: center;
+        padding-top: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    /* ========== РЕКОРДЫ ========== */
+    .records {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .record {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 24px;
+        align-items: center;
+        background: linear-gradient(90deg, rgba(92, 22, 27, 0.9), rgba(61, 14, 18, 0.6));
+        border: 1px solid var(--gold-3);
+        padding: 20px 24px;
+        position: relative;
+        transition: all 0.35s;
+    }
+
+    .record::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 12px;
+        bottom: 12px;
+        width: 2px;
+        background: linear-gradient(180deg, transparent, var(--gold), transparent);
+    }
+
+    .record:hover {
+        border-color: var(--gold);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(201, 162, 39, 0.08);
+        transform: translateX(4px);
+    }
+
+    .record-num {
+        font-family: 'Cinzel', serif;
+        font-weight: 900;
+        font-size: 2.4rem;
+        text-align: center;
+        background: linear-gradient(180deg, var(--gold-2), var(--gold-3));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+    }
+
+    .record-body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .record-body h4 {
+        font-family: 'Cormorant Unicase', serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        letter-spacing: 1px;
+        color: var(--cream);
+        text-transform: uppercase;
+    }
+
+    .record-body .note {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 0.88rem;
+        color: rgba(230, 200, 105, 0.65);
+        letter-spacing: 0.5px;
+    }
+
+    /* ========== ТРОЙНАЯ ФОТОГАЛЕРЕЯ ========== */
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .gallery-item {
+        border: 1px solid var(--gold-3);
+        padding: 6px;
+        background: var(--burgundy-2);
+        overflow: hidden;
+        position: relative;
+        aspect-ratio: 4 / 3;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(0.3) saturate(0.85) brightness(0.75);
+        transition: all 0.6s;
+    }
+
+    .gallery-item:hover img {
+        filter: sepia(0.1) saturate(1) brightness(0.9);
+        transform: scale(1.05);
+    }
+
+    .gallery-item .gallery-label {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        font-family: 'Marcellus', serif;
+        font-size: 0.68rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold-2);
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+        text-align: center;
+    }
+
+    /* ========== ФУТЕР ========== */
+    footer {
+        margin-top: 60px;
+        text-align: center;
+        padding: 32px 20px 0;
+        border-top: 1px solid rgba(201, 162, 39, 0.3);
+        font-family: 'Marcellus', serif;
+        font-size: 0.72rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: rgba(201, 162, 39, 0.55);
+    }
+
+    footer .seal {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border: 2px solid var(--gold);
+        border-radius: 50%;
+        line-height: 56px;
+        font-family: 'Cinzel', serif;
+        font-weight: 900;
+        color: var(--gold);
+        font-size: 0.85rem;
+        letter-spacing: 0;
+        margin-bottom: 20px;
+        background: radial-gradient(circle, rgba(201, 162, 39, 0.15), transparent);
+        box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+    }
+
+    /* ========== АДАПТИВ ========== */
+    @media (max-width: 780px) {
+        .container { padding: 24px 14px 60px; }
+        .bio-body { column-count: 1; }
+        .profile-grid { grid-template-columns: repeat(2, 1fr); }
+        .profile-card:nth-child(6) { grid-column: span 2; }
+        .record { grid-template-columns: 60px 1fr; gap: 16px; padding: 16px 18px; }
+        .record-num { font-size: 1.8rem; }
+        .record-body h4 { font-size: 1rem; }
+        .gallery { grid-template-columns: 1fr; }
+        .corner-frame { padding: 30px 20px; }
+        .crest h1 { letter-spacing: 1px; }
+    }
+
+    @media (max-width: 420px) {
+        .profile-grid { grid-template-columns: 1fr; }
+        .profile-card:nth-child(6) { grid-column: span 1; }
+        .corner-frame::before,
+        .corner-frame::after,
+        .corner-frame .corner-tr,
+        .corner-frame .corner-bl {
+            width: 25px;
+            height: 25px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ГЕРБ -->
+        <header class="crest">
+            <div class="crest-ornament">
+                <span class="line"></span>
+                <span class="star">✦</span>
+                <span class="line"></span>
+            </div>
+
+            <svg class="crown" viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 55 L10 30 L25 42 L35 20 L50 38 L65 20 L75 42 L90 30 L90 55 Z"
+                      stroke="#c9a227" stroke-width="2" fill="rgba(201,162,39,0.1)"/>
+                <circle cx="10" cy="27" r="3" fill="#c9a227"/>
+                <circle cx="35" cy="17" r="3" fill="#c9a227"/>
+                <circle cx="50" cy="35" r="3" fill="#c9a227"/>
+                <circle cx="65" cy="17" r="3" fill="#c9a227"/>
+                <circle cx="90" cy="27" r="3" fill="#c9a227"/>
+                <rect x="8" y="55" width="84" height="6" fill="#c9a227"/>
+                <circle cx="50" cy="48" r="3" fill="#c9a227"/>
+            </svg>
+
+            <h1>Slavko gsGwa<br>%3F s%'/</h1>
+            <div class="crest-subtitle">— Триумф и Наследие —</div>
+            <div class="crest-motto">Дороги · Семья · Легенда</div>
+        </header>
+
+        <!-- ГЕРОЙ-ФОТО -->
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1600&q=80&auto=format&fit=crop"
+                 alt="Mercedes C350" loading="lazy">
+            <div class="hero-image-overlay">
+                <div class="overline">Anno · MMXXV</div>
+                <h2>Человек, дорога и Mercedes</h2>
+            </div>
+        </div>
+
+        <!-- РАЗДЕЛИТЕЛЬ -->
+        <div class="ornament-divider">
+            <span class="orn-line"></span>
+            <svg viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 10 Q10 2, 15 10 Q20 18, 25 10 Q30 2, 35 10" stroke="#c9a227" stroke-width="1.5" fill="none"/>
+                <circle cx="20" cy="10" r="2" fill="#c9a227"/>
+            </svg>
+            <span class="orn-line"></span>
+        </div>
+
+        <!-- I. ПРОФИЛЬ -->
+        <section>
+            <div class="corner-frame">
+                <span class="corner-tr"></span>
+                <span class="corner-bl"></span>
+
+                <div class="section-title">
+                    <div class="roman">— I —</div>
+                    <h2>Мини-<span>описание</span></h2>
+                    <div class="subline">Титулы и достоинства</div>
+                </div>
+
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <span class="icon">⏳</span>
+                        <div class="label">Возраст</div>
+                        <div class="value">35 лет</div>
+                    </div>
+                    <div class="profile-card">
+                        <span class="icon">⚜</span>
+                        <div class="label">Семейное положение</div>
+                        <div class="value">Женат</div>
+                    </div>
+                    <div class="profile-card">
+                        <span class="icon">❦</span>
+                        <div class="label">Дети</div>
+                        <div class="value">Двое</div>
+                    </div>
+                    <div class="profile-card">
+                        <span class="icon">⌂</span>
+                        <div class="label">Недвижимость</div>
+                        <div class="value">2 квартиры</div>
+                    </div>
+                    <div class="profile-card">
+                        <span class="icon">✦</span>
+                        <div class="label">Автомобиль</div>
+                        <div class="value">Mercedes C350</div>
+                    </div>
+                    <div class="profile-card">
+                        <span class="icon">⚔</span>
+                        <div class="label">Должность</div>
+                        <div class="value">Начальник отдела службы по обслуживанию дорог</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- II. БИОГРАФИЯ -->
+        <section>
+            <div class="corner-frame">
+                <span class="corner-tr"></span>
+                <span class="corner-bl"></span>
+
+                <div class="section-title">
+                    <div class="roman">— II —</div>
+                    <h2>Жизнеописание</h2>
+                    <div class="subline">Хроники славного пути</div>
+                </div>
+
+                <div class="bio-intro">
+                    Обычный челябинский парень, что прошёл путь от пацана с дискетой в кармане до начальника отдела и человека, чей Steam-аккаунт знают на нескольких континентах.
+                </div>
+
+                <div class="bio-body">
+                    <!-- Картинка 1 -->
+                    <div class="bio-image">
+                        <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80&auto=format&fit=crop"
+                             alt="Дорога" loading="lazy">
+                        <div class="caption">— Дороги Челябинска, XX век —</div>
+                    </div>
+
+                    <div class="chapter">
+                        <div class="chapter-head">
+                            <span class="chapter-year">Anno 1990</span>
+                        </div>
+                        <h3>Родился в Челябинске</h3>
+                        <p>Появился на свет в суровом уральском городе, где зимы длиннее лета, а мужики крепче гранита. Рос в обычной пятиэтажке на окраине Челябинска, во дворе, где дрались, мирились, гоняли на велосипедах и учились жизни быстрее, чем в любой школе.</p>
+                        <p>Отец работал на металлургическом заводе, мать — учительницей в местной школе. Именно они привили ему главное: слово держать, за близких стоять, а если что-то делать — то по-настоящему.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <div class="chapter-head">
+                            <span class="chapter-year">MM—MMVI · Школа</span>
+                        </div>
+                        <h3>Первые дороги и компьютеры</h3>
+                        <p>Учился в школе с углублённым изучением физики и математики. Уже тогда было видно: парень не из тех, кто сидит на задней парте ради смеха. Физика давалась легко, а вот с гуманитарными науками было сложнее — сочинения получались короткие, но честные.</p>
+                        <p>Одновременно с учёбой открыл для себя новый мир — мир компьютерных клубов. Первый компьютер дома появился в 2003-м, а вместе с ним и любовь к играм, что останется с ним на всю жизнь.</p>
+                    </div>
+
+                    <!-- Картинка 2 -->
+                    <div class="bio-image">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80&auto=format&fit=crop"
+                             alt="Гейминг" loading="lazy">
+                        <div class="caption">— Ночные баталии за рейтинг —</div>
+                    </div>
+
+                    <div class="chapter">
+                        <div class="chapter-head">
+                            <span class="chapter-year">MMVI—MMXI · Институт</span>
+                        </div>
+                        <h3>Автомобильно-дорожный институт</h3>
+                        <p>Поступил в автомобильно-дорожный институт — не потому что было модно, а потому что дороги были его настоящей страстью. Ещё студентом подрабатывал на стройке, летом — на укладке асфальта, чтобы не сидеть на шее у родителей.</p>
+                        <p>В институте познакомился с будущей женой — тихой, умной девчонкой с параллельного потока. Именно она, по его словам, «сделала из балбеса человека».</p>
+                    </div>
+
+                    <div class="chapter">
+                        <div class="chapter-head">
+                            <span class="chapter-year">MMXI—MMXVIII · Карьера</span>
+                        </div>
+                        <h3>От инженера до начальника отдела</h3>
+                        <p>Окончил институт с красным дипломом и сразу устроился простым инженером в службу по обслуживанию дорог. Первые годы были тяжёлыми: смены по двенадцать часов, выезды в любую погоду, дороги, что нужно держать в порядке круглый год.</p>
+                        <p>Но упорство и трудолюбие сделали своё дело. Через пять лет — повышение до старшего инженера, ещё через два — до начальника отдела. Сегодня под его началом десятки специалистов и сотни километров трасс.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <div class="chapter-head">
+                            <span class="chapter-year">MMXVIII—днесь · Семья и Steam</span>
+                        </div>
+                        <h3>Дом, дети и 103 аккаунта</h3>
+                        <p>Женился на той самой девчонке из института. Сегодня у них двое детей — сын и дочь. Сын уже потихоньку осваивает Counter-Strike под присмотром отца, а дочь пока больше любит рисовать, чем стрелять.</p>
+                        <p>Но и про Steam он не забыл. За годы собрал коллекцию из 103 аккаунтов с Prime в CS — годы гринда, торговли скинами и участия в кланах. Однажды вступил в легендарный клан китайцев, где узнал, что такое настоящая дисциплина.</p>
+                        <p>Отдельная гордость — знание всех Анти-Тиктокерских вардов. На Фантомке держит блатной счёт 0/17/3 — не потому что плохо играет, а потому что красиво. А на Фирионе сколотил 100к нетворса — рекорд, которым гордится больше диплома.</p>
+                    </div>
+                </div>
+
+                <!-- Галерея -->
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80&auto=format&fit=crop"
+                             alt="Steam" loading="lazy">
+                        <div class="gallery-label">— Steam · 103 аккаунта —</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80&auto=format&fit=crop"
+                             alt="Семья" loading="lazy">
+                        <div class="gallery-label">— Семья · Двое детей —</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- III. РЕКОРДЫ -->
+        <section>
+            <div class="corner-frame">
+                <span class="corner-tr"></span>
+                <span class="corner-bl"></span>
+
+                <div class="section-title">
+                    <div class="roman">— III —</div>
+                    <h2>Личные <span>рекорды</span></h2>
+                    <div class="subline">Steam · Достижения · Легенды</div>
+                </div>
+
+                <div class="records">
+                    <div class="record">
+                        <div class="record-num">I</div>
+                        <div class="record-body">
+                            <h4>103 аккаунта с Prime в CS</h4>
+                            <div class="note">— годы гринда, торговли скинами и участия в кланах —</div>
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="record-num">II</div>
+                        <div class="record-body">
+                            <h4>100к нетворса на Фирионе</h4>
+                            <div class="note">— рекорд, которым гордится больше диплома —</div>
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="record-num">III</div>
+                        <div class="record-body">
+                            <h4>Блатной счёт на Фантомке 0/17/3</h4>
+                            <div class="note">— не потому что плохо, а потому что красиво —</div>
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="record-num">IV</div>
+                        <div class="record-body">
+                            <h4>Знание Анти-Тиктокерских вардов</h4>
+                            <div class="note">— помнит наизусть, где ставить, чтоб никто не увидел —</div>
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="record-num">V</div>
+                        <div class="record-body">
+                            <h4>Участие в клане китайцев</h4>
+                            <div class="note">— настоящая дисциплина и связка «вард-смок-флешка» —</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="seal">S·G</div>
+            <div>Slavko gsGwa %3F s%'/ · Anno MMXXV</div>
+            <div style="margin-top: 8px; opacity: 0.6; font-size: 0.65rem;">— все рекорды реальны, совпадения случайны —</div>
+        </footer>
+    </div>
+</body>
+</html>
